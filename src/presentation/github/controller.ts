@@ -18,7 +18,6 @@ export class GithubController {
         message = `Unhandled event: ${githubEvent}`
         break
     }
-    console.log(message)
     res.status(201).json('Webhook received')
   }
 }
