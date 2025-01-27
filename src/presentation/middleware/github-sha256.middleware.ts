@@ -18,11 +18,8 @@ export class GithubSha256Middleware {
       xHibSignature,
       body
     )
-    if (isValid) {
-      next()
-    } else {
-      res.status(401).json({ error: 'Unauthorized' })
-    }
+    if (isValid) next()
+    else res.status(401).json({ error: 'Unauthorized' })
   }
 
   private static async verifySignature(
